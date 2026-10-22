@@ -35,12 +35,12 @@ Os testes Playwright ficam em `tests/` e usam o padrão `*.spec.js`.
 
 O currículo/portfólio em inglês está em `portfolio/`, com seções de perfil,
 carreira, habilidades, automação, formação e contato, além de alternância de
-tema claro/escuro. O workflow `.github/workflows/pages.yml` publica esse
-diretório no GitHub Pages após um push para `main` ou `master`.
+tema claro/escuro. O workflow `.github/workflows/pages.yml` habilita o GitHub
+Pages automaticamente na primeira execução e publica esse diretório após um
+push para `main` ou `master`.
 
-Para habilitar a publicação no repositório, abra **Settings → Pages** e
-selecione **GitHub Actions** como fonte de deploy. Depois que o workflow
-terminar, o endereço será `https://mrlcast.github.io/<repository-name>/`.
+Quando o workflow terminar, o endereço será
+`https://mrlcast.github.io/buger-eats-qa-portfolio/`.
 
 ## Teste de performance com k6
 
