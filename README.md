@@ -74,9 +74,13 @@ bem-sucedida.
 
 Na seção CI/CD do portfólio, os links **Read performance report** e **Inspect
 summary JSON** abrem os resultados publicados; **Explore raw k6 data** permite
-analisar a saída completa. O link de artefatos do workflow leva às execuções,
-onde também ficam o relatório Playwright, screenshots, vídeos e o artefato
-completo do k6 por 14 dias.
+analisar a saída completa. O link **Open latest Playwright HTML report** abre
+diretamente o relatório HTML público da execução mais recente aprovada:
+`https://mrlcast.github.io/buger-eats-qa-portfolio/playwright-report/`. Ele é
+republicado com cada deploy bem-sucedido; não é uma visualização ao vivo durante
+a execução. Screenshots e vídeos específicos de cada execução, além do
+artefato completo do k6, continuam disponíveis para download na página da
+execução do Actions por 14 dias.
 
 ## Teste de performance com k6
 

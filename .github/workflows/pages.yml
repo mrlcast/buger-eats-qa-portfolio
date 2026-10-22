@@ -109,6 +109,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Download Playwright HTML report
+        if: needs.test.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: portfolio/playwright-report
+
       - name: Download latest successful k6 report
         if: needs.performance.result == 'success'
         uses: actions/download-artifact@v4
