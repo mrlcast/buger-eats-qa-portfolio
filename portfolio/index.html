@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Marlon Castilho — QA Tech Lead and Senior QA with 13 years in software quality and test automation."
+      content="Marlon Castilho — Senior QA, test automation, and AI, with 13 years in software quality."
     />
     <meta name="theme-color" content="#0b1020" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta property="og:title" content="Marlon Castilho — QA Tech Lead" />
+    <meta property="og:title" content="Marlon Castilho — Senior QA · Automation · AI" />
     <meta
       property="og:description"
       content="Quality engineering, automation, and practical testing projects."
     />
-    <title>Marlon Castilho — QA Tech Lead</title>
+    <title>Marlon Castilho — Senior QA · Automation · AI</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
@@ -22,7 +22,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Marlon Castilho, home">marlon_castilho.qa</a>
+      <a class="wordmark" href="#top" aria-label="Marlon Castilho, home">Marlon Castilho - Senior QA - Automation - IA</a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#about">about</a>
         <a href="#experience">experience</a>
@@ -243,12 +243,12 @@
           <div class="project-results">
             <div><strong>14</strong><span>UI scenarios</span><small>Playwright · Chromium</small></div>
             <div><strong>03</strong><span>API checks</span><small>ViaCEP · HTTP + JSON</small></div>
-            <div><strong>82.08<em> ms</em></strong><span>Recorded response p95</span><small>k6 · 5 VUs · 60 seconds</small></div>
+            <div><strong>59.46<em> ms</em></strong><span>Recorded response p95</span><small>k6 · 5 VUs · 60 seconds</small></div>
             <div><strong>0<em>%</em></strong><span>HTTP failures</span><small>Recorded smoke run</small></div>
           </div>
           <div class="project-tools"><span>Playwright</span><span>JavaScript</span><span>ViaCEP</span><span>k6</span><span>GitHub Pages</span></div>
           <p class="project-caveat">
-            The k6 numbers are from a low-load reference run, not a stress test or
+            The k6 numbers are from a 5-user smoke run, not a stress test or
             a claim about production capacity. The form displays a confirmation,
             but no registration backend was observed.
           </p>
@@ -279,6 +279,29 @@
           A real GitHub Actions pipeline runs the QA suites against the official
           Buger Eats site and publishes this portfolio after the UI and API gate passes.
         </p>
+
+        <div class="pipeline-metrics" aria-label="Latest verified pipeline results">
+          <article class="pipeline-metric metric-tests">
+            <strong>17</strong>
+            <span>UI / API tests</span>
+            <small>14 UI · 3 API</small>
+          </article>
+          <article class="pipeline-metric metric-vus">
+            <strong>5</strong>
+            <span>Virtual users</span>
+            <small>k6 · 60 seconds</small>
+          </article>
+          <article class="pipeline-metric metric-p95">
+            <strong>59.46<em> ms</em></strong>
+            <span>Response time p95</span>
+            <small>Latest verified run</small>
+          </article>
+          <article class="pipeline-metric metric-failures">
+            <strong>0<em>%</em></strong>
+            <span>HTTP failures</span>
+            <small>Latest verified run</small>
+          </article>
+        </div>
 
         <article class="pipeline-card">
           <div class="pipeline-header">
@@ -343,10 +366,11 @@
           </div>
 
           <div class="pipeline-evidence">
-            <span>PERFORMANCE REFERENCE · LOCAL RUN · OCT 22, 2026</span>
-            <strong>Smoke test passed</strong>
-            <small>5 virtual users · 292 HTTP requests · p95 82.08 ms · 0% HTTP failures · 584/584 checks passed.</small>
-            <small>This snapshot describes one run, not a capacity guarantee. Successful CI runs refresh the linked reports before Pages deployment.</small>
+            <span>VERIFIED WORKFLOW RUN · OCT 22, 2026</span>
+            <a href="https://github.com/mrlcast/buger-eats-qa-portfolio/actions/runs/39840977213" target="_blank" rel="noreferrer">
+              17 UI/API tests passed · k6 p95 59.46 ms · 0% HTTP failures · deployment succeeded ↗
+            </a>
+            <small>Performance values describe this smoke-test run only; they are not a capacity or production-performance guarantee.</small>
           </div>
 
           <div class="pipeline-report">
@@ -426,7 +450,7 @@
     </main>
 
     <footer class="site-footer page-section">
-      <a class="wordmark" href="#top">marlon_castilho.qa</a>
+      <a class="wordmark" href="#top">Marlon Castilho - Senior QA - Automation - IA</a>
       <span>Built with care. Verified with evidence.</span>
       <a href="#top">Back to top ↑</a>
     </footer>

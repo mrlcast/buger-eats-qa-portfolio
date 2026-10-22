@@ -57,8 +57,10 @@ body {
   min-width: 320px;
   margin: 0;
   background:
-    radial-gradient(ellipse at 82% 9%, var(--green-soft), transparent 31rem),
+    radial-gradient(ellipse at 82% 8%, var(--green-soft), transparent 34rem),
+    radial-gradient(ellipse at 12% 88%, var(--blue-soft), transparent 32rem),
     var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--sans);
   font-size: 15px;
@@ -110,7 +112,11 @@ summary:focus-visible {
   justify-content: space-between;
   gap: 22px;
   border-bottom: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--bg) 88%, var(--green) 12%),
+    color-mix(in srgb, var(--bg) 84%, var(--blue) 16%)
+  );
   backdrop-filter: blur(16px);
 }
 
@@ -120,7 +126,7 @@ summary:focus-visible {
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .main-nav {
@@ -134,7 +140,7 @@ summary:focus-visible {
 .theme-toggle {
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   text-decoration: none;
   transition: color 150ms ease;
 }
@@ -195,7 +201,7 @@ summary:focus-visible {
   margin: 0;
   color: var(--green);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.08em;
 }
 
@@ -257,7 +263,7 @@ summary:focus-visible {
 .profile-links a,
 .profile-location {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
   text-decoration: none;
 }
 
@@ -289,7 +295,7 @@ summary:focus-visible {
   display: flex;
   justify-content: space-between;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .summary-title {
@@ -318,18 +324,18 @@ summary:focus-visible {
   background: color-mix(in srgb, var(--teal) 15%, transparent);
   grid-row: span 2;
   color: var(--teal);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .summary-result > span:nth-child(2) {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .summary-result strong {
   color: var(--green);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -358,7 +364,7 @@ summary:focus-visible {
   padding-top: 12px;
   border-top: 1px solid var(--line);
   color: var(--faint);
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .summary-footer span:first-child {
@@ -422,8 +428,9 @@ summary:focus-visible {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 55px;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 48px;
 }
 
 .about-lead {
@@ -439,8 +446,17 @@ summary:focus-visible {
 .about-copy p,
 .section-description {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.85;
+}
+
+.about-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.about-copy p {
+  margin: 0;
 }
 
 .about-copy p:last-child {
@@ -558,7 +574,7 @@ summary:focus-visible {
   padding: 2px;
   color: var(--experience-accent);
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
@@ -587,14 +603,14 @@ summary:focus-visible {
   gap: 7px;
   color: var(--experience-accent);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.07em;
 }
 
 .experience-company span + span {
   color: var(--faint);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 450;
   letter-spacing: 0;
 }
@@ -606,7 +622,7 @@ summary:focus-visible {
   border-radius: 3px;
   color: color-mix(in srgb, var(--experience-accent) 82%, var(--text));
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   white-space: nowrap;
 }
 
@@ -626,7 +642,7 @@ summary:focus-visible {
 .experience-location {
   margin: 0;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .experience-location span {
@@ -646,7 +662,7 @@ summary:focus-visible {
   border-radius: 3px;
   color: color-mix(in srgb, var(--experience-accent) 84%, var(--text));
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .education-list {
@@ -686,14 +702,14 @@ summary:focus-visible {
 .skill-group h3 {
   color: var(--group-accent);
   margin: 0 0 5px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .skill-group p {
   margin: 0 0 12px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .chips,
@@ -710,7 +726,7 @@ summary:focus-visible {
   border-radius: 3px;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .skill-group .chips span {
@@ -764,7 +780,7 @@ summary:focus-visible {
 }
 
 .project-label {
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .project-heading h3 {
@@ -777,7 +793,7 @@ summary:focus-visible {
 .project-heading > a,
 .project-repo-link {
   color: var(--green);
-  font-size: 10px;
+  font-size: 11px;
   text-decoration: none;
 }
 
@@ -790,7 +806,7 @@ summary:focus-visible {
   max-width: 780px;
   margin: 13px 0 20px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
 }
 
@@ -838,20 +854,20 @@ summary:focus-visible {
 
 .project-results strong em {
   color: var(--green);
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
 }
 
 .project-results > div > span {
   margin-top: 4px;
   color: var(--text);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 550;
 }
 
 .project-results small {
   color: var(--faint);
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .project-tools {
@@ -861,7 +877,7 @@ summary:focus-visible {
 .project-caveat {
   margin: 13px 0 6px;
   color: var(--faint);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.75;
 }
 
@@ -875,6 +891,63 @@ summary:focus-visible {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--panel);
+}
+
+.pipeline-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0 12px;
+}
+
+.pipeline-metric {
+  --metric-accent: var(--blue);
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+  padding: 13px 15px;
+  border: 1px solid color-mix(in srgb, var(--metric-accent) 34%, var(--line));
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--metric-accent) 6%, var(--panel));
+}
+
+.pipeline-metric:nth-child(2) {
+  --metric-accent: var(--teal);
+}
+
+.pipeline-metric:nth-child(3) {
+  --metric-accent: var(--pink);
+}
+
+.pipeline-metric:nth-child(4) {
+  --metric-accent: var(--amber);
+}
+
+.pipeline-metric strong {
+  color: var(--metric-accent);
+  font-family: var(--mono);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 650;
+  letter-spacing: -0.065em;
+  line-height: 1.1;
+}
+
+.pipeline-metric strong em {
+  font-size: 0.55em;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+.pipeline-metric > span {
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pipeline-metric small {
+  color: var(--faint);
+  font-size: 10px;
+  line-height: 1.45;
 }
 
 .pipeline-header {
@@ -899,7 +972,7 @@ summary:focus-visible {
   gap: 5px;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   text-decoration: none;
 }
 
@@ -947,14 +1020,14 @@ summary:focus-visible {
 
 .pipeline-triggers strong {
   color: var(--blue);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .pipeline-triggers p,
 .pipeline-deploy p {
   margin: 3px 0 0;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.65;
 }
 
@@ -1001,7 +1074,7 @@ summary:focus-visible {
 .pipeline-tag {
   color: var(--step-accent);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.055em;
 }
 
@@ -1009,7 +1082,7 @@ summary:focus-visible {
 .pipeline-deploy h4 {
   margin: 11px 0 0;
   color: var(--step-accent);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 620;
 }
 
@@ -1017,7 +1090,7 @@ summary:focus-visible {
   min-height: 30px;
   margin: 5px 0 9px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.6;
 }
 
@@ -1028,7 +1101,7 @@ summary:focus-visible {
   margin: 0 0 12px;
   padding-left: 16px;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .pipeline-step li::marker {
@@ -1047,7 +1120,7 @@ summary:focus-visible {
   padding: 5px 7px;
   border: 1px solid color-mix(in srgb, var(--step-accent) 28%, var(--line));
   border-radius: 3px;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .pipeline-deploy {
@@ -1080,7 +1153,7 @@ summary:focus-visible {
   flex: 0 0 auto;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   text-decoration: none;
 }
 
@@ -1096,26 +1169,26 @@ summary:focus-visible {
 .pipeline-evidence > span {
   color: var(--amber);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.06em;
 }
 
 .pipeline-evidence a {
   color: var(--text);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 550;
   text-decoration: none;
 }
 
 .pipeline-evidence small {
   color: var(--faint);
-  font-size: 8px;
+  font-size: 9px;
   line-height: 1.55;
 }
 
 .pipeline-evidence > strong {
   color: var(--text);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 620;
 }
 
@@ -1141,7 +1214,7 @@ summary:focus-visible {
 .pipeline-report p {
   margin: 0;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.65;
 }
 
@@ -1154,7 +1227,7 @@ summary:focus-visible {
 .pipeline-report-links a {
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   text-decoration: none;
 }
 
@@ -1164,7 +1237,7 @@ summary:focus-visible {
 
 .pipeline-report > small {
   color: var(--faint);
-  font-size: 8px;
+  font-size: 9px;
   line-height: 1.55;
 }
 
@@ -1199,12 +1272,12 @@ summary:focus-visible {
 
 .finding-label {
   color: var(--amber);
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .finding-card h3 {
   margin: 5px 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -1212,7 +1285,7 @@ summary:focus-visible {
   max-width: 760px;
   margin: 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.75;
 }
 
@@ -1241,7 +1314,7 @@ summary:focus-visible {
   max-width: 640px;
   margin: -5px 0 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.7;
 }
 
@@ -1264,13 +1337,13 @@ summary:focus-visible {
   background: color-mix(in srgb, var(--blue) 12%, transparent);
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 .education-heading .education-school {
   color: var(--text);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   text-align: left;
 }
@@ -1279,7 +1352,7 @@ summary:focus-visible {
   margin: 3px 0 0;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .education-details {
@@ -1290,7 +1363,7 @@ summary:focus-visible {
   margin: 0 0 6px;
   color: var(--pink);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.08em;
 }
 
@@ -1314,7 +1387,7 @@ summary:focus-visible {
 .education-project p {
   margin: 7px 0 0;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.65;
 }
 
@@ -1328,7 +1401,7 @@ summary:focus-visible {
 .education-project > span {
   color: var(--pink);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 0.06em;
 }
 
@@ -1354,7 +1427,7 @@ summary:focus-visible {
 .contact-section > p:not(.section-kicker) {
   margin: 0 auto 17px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .contact-links {
@@ -1369,7 +1442,7 @@ summary:focus-visible {
   border-radius: 4px;
   color: var(--text);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   text-decoration: none;
 }
 
@@ -1395,7 +1468,7 @@ summary:focus-visible {
 .site-footer > span,
 .site-footer > a:last-child {
   color: var(--faint);
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .site-footer > a:last-child {
@@ -1412,8 +1485,14 @@ summary:focus-visible {
   .site-header {
     min-height: 64px;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     padding-block: 10px;
+  }
+
+  .site-header .wordmark {
+    max-width: calc(100% - 82px);
+    font-size: 10px;
+    line-height: 1.45;
   }
 
   .main-nav {
@@ -1441,6 +1520,10 @@ summary:focus-visible {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  .pipeline-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-lead {
@@ -1483,7 +1566,7 @@ summary:focus-visible {
   }
 
   .profile-role {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .profile-summary {
@@ -1596,11 +1679,11 @@ summary:focus-visible {
 
   .experience-period {
     padding: 3px 6px;
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .experience-card h3 {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .contact-section {
