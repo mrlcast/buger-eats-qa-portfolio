@@ -97,12 +97,15 @@ summary:focus-visible {
 }
 
 .page-section,
-.site-header {
+.contact-section {
   width: min(100% - 56px, 1000px);
   margin-inline: auto;
 }
 
 .site-header {
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: max(28px, calc((100% - 1000px) / 2));
   position: sticky;
   z-index: 5;
   top: 0;
@@ -112,11 +115,7 @@ summary:focus-visible {
   justify-content: space-between;
   gap: 22px;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(
-    105deg,
-    color-mix(in srgb, var(--bg) 88%, var(--green) 12%),
-    color-mix(in srgb, var(--bg) 84%, var(--blue) 16%)
-  );
+  background: var(--panel);
   backdrop-filter: blur(16px);
 }
 
@@ -1477,12 +1476,12 @@ summary:focus-visible {
 
 @media (max-width: 780px) {
   .page-section,
-  .site-header,
   .contact-section {
     width: min(100% - 38px, 680px);
   }
 
   .site-header {
+    padding-inline: 19px;
     min-height: 64px;
     flex-wrap: wrap;
     gap: 8px;
@@ -1541,9 +1540,12 @@ summary:focus-visible {
   }
 
   .page-section,
-  .site-header,
   .contact-section {
     width: min(100% - 30px, 460px);
+  }
+
+  .site-header {
+    padding-inline: 15px;
   }
 
   .profile-section {
