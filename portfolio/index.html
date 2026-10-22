@@ -28,6 +28,7 @@
         <a href="#experience">experience</a>
         <a href="#skills">skills</a>
         <a href="#automation">automation</a>
+        <a href="#cicd">ci/cd</a>
         <a href="#education">education</a>
         <a href="#contact">contact</a>
       </nav>
@@ -269,6 +270,91 @@
             </p>
           </div>
         </div>
+      </section>
+
+      <section class="content-section page-section" id="cicd" aria-labelledby="cicd-title">
+        <p class="section-kicker">// github_actions</p>
+        <h2 id="cicd-title">From commit to verified delivery</h2>
+        <p class="section-description">
+          A real GitHub Actions pipeline runs the QA suites against the official
+          Buger Eats site and publishes this portfolio after the UI and API gate passes.
+        </p>
+
+        <article class="pipeline-card">
+          <div class="pipeline-header">
+            <div>
+              <p class="project-label">CONTINUOUS INTEGRATION · CONTINUOUS DELIVERY</p>
+              <h3>Automated quality pipeline</h3>
+            </div>
+            <a class="workflow-status" href="https://github.com/mrlcast/buger-eats-qa-portfolio/actions/workflows/pages.yml" target="_blank" rel="noreferrer">
+              <img src="https://github.com/mrlcast/buger-eats-qa-portfolio/actions/workflows/pages.yml/badge.svg?branch=main" alt="GitHub Actions workflow status" />
+              <span>View workflow ↗</span>
+            </a>
+          </div>
+
+          <div class="pipeline-triggers" aria-label="Workflow triggers">
+            <span class="pipeline-icon" aria-hidden="true">↻</span>
+            <div>
+              <strong>Workflow triggers</strong>
+              <p>Pushes and pull requests to <code>main</code> / <code>master</code>, daily at 09:00 BRT, or manual dispatch.</p>
+            </div>
+          </div>
+
+          <div class="pipeline-checks">
+            <article class="pipeline-step pipeline-ui">
+              <div class="pipeline-step-heading">
+                <span class="pipeline-icon" aria-hidden="true">✓</span>
+                <span class="pipeline-tag">REQUIRED DEPLOY GATE</span>
+              </div>
+              <h4>UI &amp; API validation</h4>
+              <p>Playwright runs in Chromium against the official application.</p>
+              <ul>
+                <li><strong>14</strong> UI scenarios</li>
+                <li><strong>3</strong> ViaCEP API checks</li>
+                <li>HTML report retained as a workflow artifact</li>
+              </ul>
+              <code class="pipeline-command">npm test</code>
+            </article>
+
+            <article class="pipeline-step pipeline-k6">
+              <div class="pipeline-step-heading">
+                <span class="pipeline-icon" aria-hidden="true">⌁</span>
+                <span class="pipeline-tag">INDEPENDENT CHECK</span>
+              </div>
+              <h4>Performance smoke test</h4>
+              <p>k6 checks the home page and registration route on the official site.</p>
+              <ul>
+                <li>5 virtual users · 60 seconds</li>
+                <li>Response-time and request-failure thresholds</li>
+                <li>Runs alongside UI/API; does not gate the Pages deploy</li>
+              </ul>
+              <code class="pipeline-command">k6 run tests/performance/buger-eats.js</code>
+            </article>
+          </div>
+
+          <div class="pipeline-deploy">
+            <span class="pipeline-icon" aria-hidden="true">↑</span>
+            <div>
+              <span class="pipeline-tag">AFTER UI/API PASS · MAIN / MASTER</span>
+              <h4>Deploy portfolio to GitHub Pages</h4>
+              <p>Pull requests validate changes without publishing. Pushes to the main branches deploy after the required UI/API job succeeds.</p>
+            </div>
+            <a href="https://mrlcast.github.io/buger-eats-qa-portfolio/" target="_blank" rel="noreferrer">Open live portfolio ↗</a>
+          </div>
+
+          <div class="pipeline-evidence">
+            <span>VERIFIED WORKFLOW RUN · OCT 22, 2026</span>
+            <a href="https://github.com/mrlcast/buger-eats-qa-portfolio/actions/runs/39833982035" target="_blank" rel="noreferrer">
+              17 UI/API tests passed · k6 p95 56.96 ms · 0% HTTP failures · deployment succeeded ↗
+            </a>
+            <small>Example run against the official site; performance figures are a smoke-test result, not a capacity claim.</small>
+          </div>
+
+          <div class="pipeline-links">
+            <a href="https://github.com/mrlcast/buger-eats-qa-portfolio/blob/main/.github/workflows/pages.yml" target="_blank" rel="noreferrer">Inspect workflow YAML ↗</a>
+            <a href="https://github.com/mrlcast/buger-eats-qa-portfolio/actions" target="_blank" rel="noreferrer">Browse all Actions runs ↗</a>
+          </div>
+        </article>
       </section>
 
       <section class="content-section page-section" id="education" aria-labelledby="education-title">

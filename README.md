@@ -34,7 +34,7 @@ Os testes Playwright ficam em `tests/` e usam o padrão `*.spec.js`.
 ## Portfolio
 
 O currículo/portfólio em inglês está em `portfolio/`, com seções de perfil,
-carreira, habilidades, automação, formação e contato, além de alternância de
+carreira, habilidades, automação, CI/CD, formação e contato, além de alternância de
 tema claro/escuro. O workflow `.github/workflows/pages.yml` publica esse
 diretório após um push para `main` ou `master`. A fonte **GitHub Actions**
 precisa estar selecionada em
