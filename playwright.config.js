@@ -9,7 +9,8 @@ module.exports = defineConfig({
   use: {
     baseURL: process.env.BASE_URL || 'https://buger-eats.vercel.app',
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
+    screenshot: 'on',
+    video: 'on',
   },
   projects: [
     {

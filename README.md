@@ -48,14 +48,35 @@ Quando o workflow terminar, o endereço do portfólio será
 O workflow `.github/workflows/pages.yml` roda `npm test` em pull requests e em
 pushes para `main`/`master`. A suíte inclui 14 cenários de UI e 3 verificações
 da API ViaCEP. O relatório HTML do Playwright fica disponível como artefato
-por 14 dias.
+por 14 dias. Screenshots e vídeos de cada teste de interface também são
+publicados como um artefato separado pelo mesmo período.
+As verificações da API anexam ao relatório o método, a URL, o status HTTP e o
+corpo retornado em cada cenário.
+
+Após executar `npm test` localmente, abra o relatório com `npm run test:report`.
+Os arquivos de evidência também ficam na pasta `test-results/`; essa pasta e o
+relatório são gerados localmente e não são versionados. Os detalhes das
+respostas da API ficam em `api-response.json` dentro da pasta de cada cenário.
 
 O smoke test k6 roda em paralelo nos mesmos eventos, diariamente às 09:00 no
 horário de Brasília (12:00 UTC) e também pode ser iniciado manualmente em
 **Actions → Portfolio CI/CD and quality tests → Run workflow**. O deploy do
 GitHub Pages acontece em pushes para `main`/`master` e em execuções manuais
 nessas branches, depois que UI/API passam. O k6 tem job e resultado próprios;
-ele não bloqueia a publicação do portfólio.
+ele não bloqueia a publicação do portfólio. Cada execução gera um resumo
+visual (`k6-summary.md`), um resumo estruturado (`k6-summary.json`) e os dados
+brutos completos (`k6-raw.json`), publicados no artefato
+`k6-performance-evidence` por 14 dias. Quando o k6 termina com sucesso, o job
+de deploy copia os relatórios Markdown, JSON e os dados brutos para
+`portfolio/evidence/` antes de publicar o Pages. A falha do job de performance
+não bloqueia o deploy; nesse caso, a publicação mantém a última evidência
+bem-sucedida.
+
+Na seção CI/CD do portfólio, os links **Read performance report** e **Inspect
+summary JSON** abrem os resultados publicados; **Explore raw k6 data** permite
+analisar a saída completa. O link de artefatos do workflow leva às execuções,
+onde também ficam o relatório Playwright, screenshots, vídeos e o artefato
+completo do k6 por 14 dias.
 
 ## Teste de performance com k6
 
@@ -70,6 +91,11 @@ execute:
 ```bash
 npm run test:performance
 ```
+
+O comando também gera `k6-summary.md`, `k6-summary.json` e `k6-raw.json` na raiz
+do projeto. O Markdown apresenta os resultados em tabelas, incluindo perfil do
+teste, métricas, checks e limites; o JSON de resumo é estruturado para consumo
+por ferramentas, enquanto o arquivo raw preserva a saída completa do k6.
 
 O script tem o destino oficial fixo em
 `https://buger-eats.vercel.app`. O cenário é intencionalmente limitado e não

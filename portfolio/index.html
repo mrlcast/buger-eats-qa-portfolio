@@ -243,7 +243,7 @@
           <div class="project-results">
             <div><strong>14</strong><span>UI scenarios</span><small>Playwright · Chromium</small></div>
             <div><strong>03</strong><span>API checks</span><small>ViaCEP · HTTP + JSON</small></div>
-            <div><strong>70.07<em> ms</em></strong><span>Recorded response p95</span><small>k6 · 1 VU · 30 seconds</small></div>
+            <div><strong>82.08<em> ms</em></strong><span>Recorded response p95</span><small>k6 · 5 VUs · 60 seconds</small></div>
             <div><strong>0<em>%</em></strong><span>HTTP failures</span><small>Recorded smoke run</small></div>
           </div>
           <div class="project-tools"><span>Playwright</span><span>JavaScript</span><span>ViaCEP</span><span>k6</span><span>GitHub Pages</span></div>
@@ -343,11 +343,24 @@
           </div>
 
           <div class="pipeline-evidence">
-            <span>VERIFIED WORKFLOW RUN · OCT 22, 2026</span>
-            <a href="https://github.com/mrlcast/buger-eats-qa-portfolio/actions/runs/39833982035" target="_blank" rel="noreferrer">
-              17 UI/API tests passed · k6 p95 56.96 ms · 0% HTTP failures · deployment succeeded ↗
-            </a>
-            <small>Example run against the official site; performance figures are a smoke-test result, not a capacity claim.</small>
+            <span>PERFORMANCE REFERENCE · LOCAL RUN · OCT 22, 2026</span>
+            <strong>Smoke test passed</strong>
+            <small>5 virtual users · 292 HTTP requests · p95 82.08 ms · 0% HTTP failures · 584/584 checks passed.</small>
+            <small>This snapshot describes one run, not a capacity guarantee. Successful CI runs refresh the linked reports before Pages deployment.</small>
+          </div>
+
+          <div class="pipeline-report">
+            <div>
+              <span class="pipeline-tag">REPORTS FOR REVIEW</span>
+              <p>Open the readable report or inspect its structured data. Successful CI runs refresh these files before the Pages deployment.</p>
+            </div>
+            <div class="pipeline-report-links">
+              <a href="evidence/k6-summary.md">Read performance report ↗</a>
+              <a href="evidence/k6-summary.json">Inspect summary JSON ↗</a>
+              <a href="evidence/k6-raw.json">Explore raw k6 data ↗</a>
+              <a href="https://github.com/mrlcast/buger-eats-qa-portfolio/actions/workflows/pages.yml" target="_blank" rel="noreferrer">Browse UI/API screenshots, videos &amp; full run artifacts ↗</a>
+            </div>
+            <small>GitHub Actions artifacts are available from each run for 14 days.</small>
           </div>
 
           <div class="pipeline-links">

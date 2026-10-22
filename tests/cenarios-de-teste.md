@@ -143,6 +143,20 @@ npx playwright test tests/cenarios-de-teste.spec.js
 ```
 
 A URL base padrão do Playwright é `https://buger-eats.vercel.app`.
+Cada teste de interface gera um screenshot e um vídeo. Localmente, os arquivos
+ficam em `test-results/` e também podem ser consultados no relatório HTML
+gerado em `playwright-report/`:
+
+```bash
+npm run test:report
+```
+
+No GitHub Actions, baixe o artefato `playwright-evidence` para acessar os
+screenshots e vídeos, ou `playwright-report` para navegar pelos resultados e
+suas evidências. As evidências da API também aparecem como anexos de cada
+cenário no relatório: método, URL, status HTTP e corpo da resposta. Os
+JSONs também são gravados em `test-results/`, um por cenário. Os artefatos do
+GitHub Actions são mantidos por 14 dias.
 
 ## 2. Testes de API — ViaCEP
 
@@ -219,6 +233,11 @@ O destino padrão e autorizado para este teste é
 ```powershell
 npm run test:performance
 ```
+
+Cada execução também gera `k6-summary.md` (relatório visual), `k6-summary.json`
+(métricas estruturadas) e `k6-raw.json` (dados completos da execução). No
+GitHub Actions, os três arquivos são disponibilizados no artefato
+`k6-performance-evidence` por 14 dias.
 
 O destino está definido no script como `https://buger-eats.vercel.app`; não é
 necessário configurar variáveis de ambiente para autorizá-lo.

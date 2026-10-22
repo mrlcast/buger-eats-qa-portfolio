@@ -53,6 +53,15 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
+      - name: Upload screenshots and videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 14
+
   performance:
     name: k6 performance smoke test
     runs-on: ubuntu-latest
@@ -67,12 +76,28 @@ jobs:
       - name: Run k6 smoke test against the official site
         run: k6 run tests/performance/buger-eats.js
 
+      - name: Upload k6 performance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-performance-evidence
+          path: |
+            k6-summary.md
+            k6-summary.json
+            k6-raw.json
+          if-no-files-found: ignore
+          retention-days: 14
+
   deploy:
     name: Deploy portfolio to GitHub Pages
     if: >-
+      always() &&
       (github.event_name == 'push' || github.event_name == 'workflow_dispatch') &&
-      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
-    needs: test
+      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') &&
+      needs.test.result == 'success'
+    needs:
+      - test
+      - performance
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -83,6 +108,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Download latest successful k6 report
+        if: needs.performance.result == 'success'
+        uses: actions/download-artifact@v4
+        with:
+          name: k6-performance-evidence
+          path: portfolio/evidence
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

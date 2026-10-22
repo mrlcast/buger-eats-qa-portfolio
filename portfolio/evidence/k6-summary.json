@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "title": "Buger Eats performance smoke test",
+  "status": "PASS",
+  "generatedAt": "2026-10-22T19:15:22.244Z",
+  "target": "https://buger-eats.vercel.app",
+  "scenario": {
+    "name": "smoke",
+    "executor": "constant-vus",
+    "virtualUsers": 5,
+    "configuredDuration": "60s",
+    "actualDurationSeconds": 61.94,
+    "routes": [
+      "/",
+      "/deliver"
+    ]
+  },
+  "results": {
+    "iterations": 146,
+    "httpRequests": 292,
+    "requestsPerSecond": 4.71,
+    "averageResponseTimeMs": 33.62,
+    "p95ResponseTimeMs": 82.08,
+    "failedRequests": 0,
+    "failedRequestRatePercent": 0,
+    "checksPassed": 584,
+    "checksFailed": 0,
+    "checksPassRatePercent": 100
+  },
+  "thresholds": [
+    {
+      "metric": "http_req_duration",
+      "condition": "p(95)<1500",
+      "status": "PASS"
+    },
+    {
+      "metric": "http_req_failed",
+      "condition": "rate<0.01",
+      "status": "PASS"
+    },
+    {
+      "metric": "checks",
+      "condition": "rate>0.99",
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "name": "home responds with HTTP 200",
+      "passed": 146,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "home returns the Buger Eats application shell",
+      "passed": 146,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "registration responds with HTTP 200",
+      "passed": 146,
+      "failed": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "registration returns the Buger Eats application shell",
+      "passed": 146,
+      "failed": 0,
+      "status": "PASS"
+    }
+  ]
+}

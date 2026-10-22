@@ -1,6 +1,9 @@
 node_modules/
 playwright-report/
 test-results/
+/k6-summary.json
+/k6-summary.md
+/k6-raw.json
 playwright/.cache/
 .playwright-mcp/
 reference-portfolio.png
